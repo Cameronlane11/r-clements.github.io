@@ -167,7 +167,7 @@ In general a data scientist:
 
 - can come from many backgrounds
   + technical and non-technical
-  + I've worked with people who were in Pysics, Bioinformatics, Mechanical Engineering, Mathematics, Computer Science
+  + I've worked with people who were in Physics, Bioinformatics, Mechanical Engineering, Mathematics, Computer Science
   + Some have PhD's, some have MA/MS's, and some have BA/BS's
 
 --
