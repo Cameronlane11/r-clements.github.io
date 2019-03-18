@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Data Science"
-subtitle: "Session 4.2"
+subtitle: "Session 7.2"
 author: "Robert Clements"
 date: ""
 output:
@@ -182,8 +182,9 @@ Let's output the cast of your movie.
 
 ```{r}
 big_lebowski %>%
-   html_nodes("#titleCast .itemprop span") %>%
-   html_text()
+  html_nodes("table") %>%
+  .[[1]] %>%
+  html_table()
 ```
 ---
 ### JSON
@@ -333,4 +334,4 @@ This list is not exhaustive.
 ---
 class: inverse, center, middle
 
-# End of Session 4.2
+# End of Session 7.2

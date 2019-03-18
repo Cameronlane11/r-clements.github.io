@@ -11,7 +11,7 @@
 class: center, middle, inverse, title-slide
 
 # Introduction to Data Science
-## Session 4.2
+## Session 7.2
 ### Robert Clements
 
 ---
@@ -189,7 +189,7 @@ big_lebowski
 ## {xml_document}
 ## &lt;html xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"&gt;
 ## [1] &lt;head&gt;\n&lt;meta http-equiv="Content-Type" content="text/html; charset= ...
-## [2] &lt;body id="styleguide-v2" class="fixed"&gt;\n            &lt;img height="1" ...
+## [2] &lt;body id="styleguide-v2" class="fixed"&gt;\n\n            &lt;img height=" ...
 ```
 
 Ok, this doesn't make any sense. Luckily there are functions that we can use to help parse this information. We won't get into these in detail, this is just for fun and illustrative purposes.
@@ -201,19 +201,63 @@ Let's output the cast of your movie.
 
 ```r
 big_lebowski %&gt;%
-   html_nodes("#titleCast .itemprop span") %&gt;%
-   html_text()
+  html_nodes("table") %&gt;%
+  .[[1]] %&gt;%
+  html_table()
 ```
 
 ```
-##  [1] "Jeff Bridges"           "John Goodman"          
-##  [3] "Julianne Moore"         "Steve Buscemi"         
-##  [5] "David Huddleston"       "Philip Seymour Hoffman"
-##  [7] "Tara Reid"              "Philip Moon"           
-##  [9] "Mark Pellegrino"        "Peter Stormare"        
-## [11] "Flea"                   "Torsten Voges"         
-## [13] "Jimmie Dale Gilmore"    "Jack Kehler"           
-## [15] "John Turturro"
+##                                   X1                                X2
+## 1  Cast overview, first billed only: Cast overview, first billed only:
+## 2                                                         Jeff Bridges
+## 3                                                         John Goodman
+## 4                                                       Julianne Moore
+## 5                                                        Steve Buscemi
+## 6                                                     David Huddleston
+## 7                                               Philip Seymour Hoffman
+## 8                                                            Tara Reid
+## 9                                                          Philip Moon
+## 10                                                     Mark Pellegrino
+## 11                                                      Peter Stormare
+## 12                                                                Flea
+## 13                                                       Torsten Voges
+## 14                                                 Jimmie Dale Gilmore
+## 15                                                         Jack Kehler
+## 16                                                       John Turturro
+##                                   X3
+## 1  Cast overview, first billed only:
+## 2                                ...
+## 3                                ...
+## 4                                ...
+## 5                                ...
+## 6                                ...
+## 7                                ...
+## 8                                ...
+## 9                                ...
+## 10                               ...
+## 11                               ...
+## 12                               ...
+## 13                               ...
+## 14                               ...
+## 15                               ...
+## 16                               ...
+##                                                        X4
+## 1                       Cast overview, first billed only:
+## 2                                                The Dude
+## 3                                          Walter Sobchak
+## 4                                          Maude Lebowski
+## 5                      Theodore Donald 'Donny' Kerabatsos
+## 6                                        The Big Lebowski
+## 7                                                  Brandt
+## 8                                          Bunny Lebowski
+## 9                                      Woo, Treehorn Thug
+## 10                                    Blond Treehorn Thug
+## 11 Nihilist #1, Uli Kunkel /  \n            'Karl Hungus'
+## 12                                   Nihilist #2, Kieffer
+## 13                                     Nihilist #3, Franz
+## 14                                                 Smokey
+## 15                                                  Marty
+## 16                                         Jesus Quintana
 ```
 ---
 ### JSON
@@ -380,7 +424,7 @@ This list is not exhaustive.
 ---
 class: inverse, center, middle
 
-# End of Session 4.2
+# End of Session 7.2
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
@@ -388,22 +432,40 @@ class: inverse, center, middle
 "highlightLines": true,
 "countIncrementalSlides": false
 });
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
-(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-  }
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
 });
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
