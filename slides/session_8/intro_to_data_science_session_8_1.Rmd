@@ -23,9 +23,9 @@ knitr::opts_chunk$set(fig.align = "center", fig.asp=.5, message = FALSE, warning
 
 - Final exams (homework) will be cumulative, open note/book, and will be in two parts:
 
-  + Take home portion will be assigned next week in place of a homework assignment (Due by Friday August 10th at noon)
+  + Take home portion will be assigned next week in place of a homework assignment (Due by Friday April 5th at noon)
   
-  + In class portion will be completed in class on the last day (Aug 7), and due in class by 9:30PM. 
+  + In class portion will be completed in class on the last day (Apr 2), and due in class by 9:30PM. 
 
 - Any questions?
 

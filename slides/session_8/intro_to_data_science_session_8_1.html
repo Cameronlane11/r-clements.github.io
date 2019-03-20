@@ -22,9 +22,9 @@ class: center, middle, inverse, title-slide
 
 - Final exams (homework) will be cumulative, open note/book, and will be in two parts:
 
-  + Take home portion will be assigned next week in place of a homework assignment (Due by Friday August 10th at noon)
+  + Take home portion will be assigned next week in place of a homework assignment (Due by Friday April 5th at noon)
   
-  + In class portion will be completed in class on the last day (Aug 7), and due in class by 9:30PM. 
+  + In class portion will be completed in class on the last day (Apr 2), and due in class by 9:30PM. 
 
 - Any questions?
 
@@ -85,12 +85,12 @@ my_tbl
 ## # A tibble: 6 x 1
 ##   value
 ##   &lt;dbl&gt;
-## 1  1.00
-## 2  2.00
-## 3  3.00
-## 4 11.0 
-## 5 12.0 
-## 6 13.0
+## 1     1
+## 2     2
+## 3     3
+## 4    11
+## 5    12
+## 6    13
 ```
 ---
 ### There are two other very common types: matrix and list
@@ -149,9 +149,9 @@ my_list
 ## # A tibble: 3 x 2
 ##       x y    
 ##   &lt;dbl&gt; &lt;chr&gt;
-## 1  3.00 b    
-## 2  2.00 d    
-## 3  1.00 f
+## 1     3 b    
+## 2     2 d    
+## 3     1 f
 ```
 ---
 ### R `list` structures
@@ -265,16 +265,16 @@ slopes
 ## # A tibble: 1,000 x 1
 ##    value
 ##    &lt;dbl&gt;
-##  1  7690
-##  2  7847
-##  3  7785
-##  4  7787
-##  5  7836
-##  6  7793
-##  7  7791
-##  8  7808
-##  9  7756
-## 10  7765
+##  1 7780.
+##  2 7807.
+##  3 7765.
+##  4 7814.
+##  5 7622.
+##  6 7852.
+##  7 7720.
+##  8 7786.
+##  9 7763.
+## 10 7791.
 ## # ... with 990 more rows
 ```
 ---
@@ -310,16 +310,16 @@ all_results
 ## # A tibble: 1,000 x 3
 ##    my_samps              my_mods  slopes
 ##    &lt;list&gt;                &lt;list&gt;    &lt;dbl&gt;
-##  1 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   7706
-##  2 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   7644
-##  3 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   7755
-##  4 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   8034
-##  5 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   8010
-##  6 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   7971
-##  7 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   7810
-##  8 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   7487
-##  9 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   8073
-## 10 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;   7728
+##  1 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7658.
+##  2 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  8000.
+##  3 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7663.
+##  4 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7628.
+##  5 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7770.
+##  6 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7679.
+##  7 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7791.
+##  8 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7639.
+##  9 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7834.
+## 10 &lt;tibble [1,000 x 10]&gt; &lt;S3: lm&gt;  7563.
 ## # ... with 990 more rows
 ```
 ---
@@ -374,7 +374,7 @@ fit_model(100)
 
 ```
 ##    carat 
-## 7879.667
+## 7190.149
 ```
 ---
 ### Defining R functions
@@ -455,22 +455,40 @@ class: inverse, center, middle
 "highlightLines": true,
 "countIncrementalSlides": false
 });
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
-(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-  }
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
 });
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
